@@ -1,0 +1,161 @@
+#hero {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 0px;
+  background: $white-color;
+  font-weight: 400;
+  color: $dark-blue-text;
+  padding: 0rem 5.6rem;
+  margin-bottom: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  // Set position sticky so the jumbotron stays fixed while you scroll.
+  // position: sticky;
+
+  // If you want to set a background image on the hero section, uncomment these with your custom image
+
+  /* background: url("/src/assets/[your-image].png");
+  background-position: center;
+  background-size: cover; */
+
+  @include respond(phone) {
+    padding: 0rem $default-font-size;
+  }
+
+  .hero-title {
+    font-size: 6.6rem;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+    text-align: left;
+
+    @include respond(tab-land) {
+      font-size: 4rem;
+    }
+    @include respond(tab-port) {
+      font-size: 3.6rem;
+      text-align: center;
+    }
+    @include respond(phone) {
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+    @include respond(phone-xs) {
+      font-size: 2.8rem;
+    }
+  }
+
+  .hero-cta {
+    display: flex;
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+
+    & a {
+      font-size: 2.4rem;
+
+      @include respond(phone) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.hero-subtitle {
+  font-size: 2.8rem;     // or 80% of your h1, adjust as needed
+  font-weight: 400;
+  display: block;
+  margin-top: 0.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 3.2rem;
+  text-align: left;
+  @include respond(tab-land) {
+      font-size: 4rem;
+    }
+    @include respond(tab-port) {
+      font-size: 3.6rem;
+      text-align: center;
+    }
+    @include respond(phone) {
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+    @include respond(phone-xs) {
+      font-size: 2.8rem;
+    }
+}
+.hero-botanical-art {
+  position: absolute;
+  top: 90%;
+  left: auto;
+  right: -13vw;           // Adjust as needed for spacing from the right edge
+  transform: translateY(-50%) scale(3.5); // Center vertically, scale 2x
+  width: 350px;         // Start with a larger width since you're scaling up
+  height: auto;
+  opacity: 0.88;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 900px) {
+  .hero-botanical-art {
+    width: 220px;
+    right: 2vw;
+    transform: translateY(-50%) scale(1.3);
+  }
+}
+@media (max-width: 600px) {
+  .hero-botanical-art {
+    width: 120px;
+    right: 1vw;
+    top: 60%;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+
+.hero-botanical-art .s1 {
+  stroke: #3560c0;     /* Change to your theme color */
+  stroke-width: 3px;   /* Adjust thickness */
+  fill: none;          /* Keep paths as outlines */
+  transition: stroke 0.2s;
+}
+
+.hero-botanical-art:hover .s1 {
+  stroke: #6e40aa;     /* Example: highlight on hover */
+}
+#hero, .jumbotron {
+  position: relative;
+}
+.hero-art-dots {
+  position: absolute;
+  top: 20%;
+  right: 7vw;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  span {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #4854c0 50%, #0080c0 100%);
+    border-radius: 80%;
+    opacity: 0.88;
+    animation: dot-float 3s infinite alternate;
+    &:nth-child(2) { animation-delay: 0.5s; }
+    &:nth-child(3) { animation-delay: 1s; }
+    &:nth-child(4) { animation-delay: 1.5s; }
+    &:nth-child(5) { animation-delay: 2s; }
+  }
+}
+@keyframes dot-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-24px); }
+}

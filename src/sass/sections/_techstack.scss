@@ -1,0 +1,190 @@
+#tech-stack {
+  position: relative;
+  background: linear-gradient(135deg, #2a3da5 0%, #236ac0 100%);
+  color: #fff;
+  margin-top: -10vw;
+  padding: 9rem 0 15rem 0;
+  clip-path: polygon(0 8vw, 100% 0, 100% 100%, 0 calc(100% - 4vw));
+  z-index: 1;
+}
+
+#tech-stack .section-title {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.tech-stack__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+  /* 7 cards * 130px + 6 gaps * 2.5rem */
+  max-width: calc(8 * 130px + 7 * 2.5rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+  .tech-stack__grid {
+    max-width: calc(4 * 130px + 3 * 2.5rem); /* 4 cards per row */
+  }
+}
+@media (max-width: 700px) {
+  .tech-stack__grid {
+    max-width: calc(2 * 130px + 1 * 2.5rem); /* 2 cards per row */
+    gap: 1.5rem;
+  }
+}
+
+
+.tech-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  width: 110px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, border 0.3s;
+}
+
+.tech-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tech-icon i {
+  font-size: 2.5rem;
+  color: #fff;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+/* Brand hover colors for each tech */
+.tech-card.c:hover .tech-icon i { color: #A8B9CC; }
+.tech-card.cpp:hover .tech-icon i { color: #67a9f5; }
+.tech-card.java:hover .tech-icon i { color: #e87415; }
+.tech-card.python:hover .tech-icon i { color: #ffcf49; }
+.tech-card.js:hover .tech-icon i { color: #F7DF1E; }
+.tech-card.html:hover .tech-icon i { color: #E34F26; }
+.tech-card.css:hover .tech-icon i { color: #663399; }
+.tech-card.flask:hover .tech-icon i { color: #000000; }
+.tech-card.fastapi:hover .tech-icon i { color: #009688; }
+.tech-card.numpy:hover .tech-icon i { color: #013243; }
+.tech-card.pandas:hover .tech-icon i { color: #150458; }
+.tech-card.matplotlib:hover .tech-icon i { color: #11557c; }
+.tech-card.tensorflow:hover .tech-icon i { color: #FF6F00; }
+.tech-card.pytorch:hover .tech-icon i { color: #EE4C2C; }
+.tech-card.git:hover .tech-icon i { color: #F05032; }
+.tech-card.github:hover .tech-icon i { color: #181717; }
+.tech-card.vscode:hover .tech-icon i { color: #007ACC; }
+.tech-card.mysql:hover .tech-icon i { color: #4479A1; }
+.tech-card.mongodb:hover .tech-icon i { color: #47A248; }
+
+/* Default for STL and any missing: use C++ color */
+.tech-card.stl:hover .tech-icon i { color: #00599C; }
+
+.tech-card span {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 0.2rem;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+.tech-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s cubic-bezier(.23,1.01,.32,1), transform 0.7s cubic-bezier(.23,1.01,.32,1);
+  will-change: opacity, transform;
+}
+
+.tech-card.visible {
+  opacity: 1;
+  transform: none;
+}
+/* Set default white color */
+.tech-card .huggingface-svg path {
+  fill: white;
+  transition: fill 0.3s ease;
+}
+
+/* Change to yellow on hover */
+.tech-card:hover .huggingface-svg path {
+  fill: #FFD21E; /* Yellow color */
+}
+
+/* Optional: Add hover effect to text */
+// .tech-card:hover span:not(.tech-icon) {
+//   color: #FFD700; /* Yellow color */
+// }
+/* Default: white icon */
+.tech-card .scikitlearn-svg path {
+  fill: #fff;
+  transition: fill 0.3s;
+}
+
+/* On hover: scikit-learn orange */
+.tech-card:hover .scikitlearn-svg path {
+  fill: #F7931E;
+}
+
+// astra #5C2EDE cassandra #1287B1 uipath #FA4616 streamlit #FF4B4B
+
+/* Default: white icons, except where brand color is needed */
+.tech-card .tech-icon svg path {
+  fill: #fff;
+  transition: fill 0.3s;
+}
+
+/* UiPath brand orange on hover */
+.tech-card.uipath:hover .uipath-svg path {
+  fill: #FA4616;
+}
+
+/* Streamlit brand red on hover */
+.tech-card.streamlit:hover .streamlit-svg path {
+  fill: #FF4B4B;
+}
+
+/* LangChain: yellow on hover (choose your shade) */
+.tech-card.langchain:hover .langchain-svg path {
+  fill: #1C3C3C;
+}
+
+/* LangGraph: teal/blue on hover (choose your shade) */
+.tech-card.langgraph:hover .langgraph-svg path {
+  fill: #1C3C3C;
+}
+
+/* Astra DB: blue on hover (choose your shade) */
+.tech-card.cassandra:hover .astra-svg path {
+  fill: #5C2EDE;
+}
+
+/* Apache Cassandra: blue on hover (choose your shade) */
+.tech-card.apache-cassandra:hover .apache-cassandra-svg path {
+  fill: #1287B1;
+}
+.tech-card .tech-icon svg {
+  width: 36px;   /* or 40px, or whatever size you prefer */
+  height: 36px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: -1rem;
+  margin-top: -1rem;
+}
+
+.tech-card .devicon {
+  font-size: 36px; /* or 40px, or whatever size you prefer */
+}
