@@ -32,7 +32,7 @@
 }
 @media (max-width: 700px) {
   .tech-stack__grid {
-    max-width: calc(2 * 130px + 1 * 2.5rem); /* 2 cards per row */
+    max-width: calc(3 * 130px + 2 * 2.5rem); /* 2 cards per row */
     gap: 1.5rem;
   }
 }

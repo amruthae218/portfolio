@@ -277,3 +277,100 @@ html, body {
     }
   }
 }
+#main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $white-color;
+  z-index: 99;
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: center;
+
+  @include respond(tab-port) {
+    padding: 1.5rem 3rem;
+  }
+
+  @include respond(phone) {
+    padding: 1rem 2rem;
+  }
+}
+
+.nav-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // 💡 Reserve space on the right for the GitHub icon
+  padding-right: 50px;
+
+  @media (max-width: 768px) {
+    padding-right: 200px; // more buffer on tablets
+  }
+
+  @media (max-width: 600px) {
+    padding-right: 160px; // even more on phones
+  }
+
+  @media (max-width: 700px) {
+    padding-right: 200px; // GitHub icon will be hidden or moved
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  justify-content: flex-end;
+
+  @include respond(phone) {
+    justify-content: center; // avoid touching GitHub icon
+  }
+}
+.main-header {
+  top: 0;
+  width: 100%;
+  background-color: $white-color;
+  z-index: 99;
+  padding: 2rem 4rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 3rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem 2rem;
+  }
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  // 🔐 Reserve space for GitHub corner
+  padding-right: 60px;
+
+  @media (max-width: 768px) {
+    padding-right: 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding-right: 60px;
+  }
+}
+
+.main-nav {
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
+
+  @media (max-width: 400px) {
+    justify-content: center;
+    width: 100%;
+  }
+}

@@ -159,3 +159,53 @@
   0% { transform: translateY(0); }
   100% { transform: translateY(-24px); }
 }
+
+@media (max-width: 600px) {
+  .hero-art-dots {
+    top: auto;
+    bottom: 2rem;
+    right: 2vw;
+    transform: scale(0.6);
+    opacity: 0.9;
+    top: 1%;
+  }
+}
+
+.hero-title,
+.hero-subtitle {
+  position: relative;
+  z-index: 2;
+}
+// Medium screens — reduce scale + reposition
+@media (max-width: 1400px) {
+  .hero-botanical-art {
+    width: 220px;
+    right: 2vw;
+    top: 75%;
+    //transform: translateY(-50%) scale(1.6); // smaller but still visible
+    opacity: 0.5;
+  }
+  .hero-subtitle {
+    display: block; // ensures it wraps nicely
+    font-size: 1.4rem; // scale for mobile
+    margin-top: 0.5rem;
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Small screens — fade out completely
+@media (max-width: 900px) {
+  .hero-botanical-art {
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+  }
+  
+}
